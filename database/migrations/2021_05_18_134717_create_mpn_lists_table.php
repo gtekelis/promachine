@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddRememberTokenColumnToUsersTable extends Migration
+class CreateMpnListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddRememberTokenColumnToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('remember_token');
+        Schema::create('mpn_lists', function (Blueprint $table) {
+            $table->id();
+            $table->string('mpn');
+            $table->boolean('returns_one_product');
+            $table->boolean('is_processed');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddRememberTokenColumnToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('remember_token');
-        });
+        Schema::dropIfExists('mpn_lists');
     }
 }
