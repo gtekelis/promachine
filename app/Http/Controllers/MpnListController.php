@@ -15,23 +15,16 @@ class MpnListController extends Controller
         $this->validate($request, [
             'mpn' => 'required'
         ]);
-//
-//        lap09dlaksdjf09098
-//mcbn90780sdglksdjf
-//jkslkhf88sd8f8s8kfk
-//ptiy99vsn35fksdf9a
 
-        $mpnString = trim($request->mpn);
-        $mpn_array = explode(" ",$mpnString);
+        $mpn_string = trim($request->mpn);
+        $mpn_array = explode("\n",$mpn_string);
 
-        var_dump($mpn_array);
+        for ($i = 0; $i < count($mpn_array); $i++){
+            MpnList::create([
+                'mpn' => $mpn_array[$i]
+            ]);
+        }
 
-//        for ($i = 0; $i < 5; $i++){
-//            MpnList::create([
-//                'mpn' => $request->mpn
-//            ]);
-//        }
-
-        // return back();
+         return back();
     }
 }
