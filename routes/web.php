@@ -20,7 +20,8 @@ use App\Http\Controllers\auth\RegisterController;
 
 //root
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
+    return view('home');
 });
 
 //home
@@ -53,3 +54,8 @@ Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 //posts
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
 Route::post('/posts', [PostController::class, 'createPost'])->name('posts');
+
+//skroutz
+Route::get('/skroutz', function(){
+    return view('skroutz.index');
+});

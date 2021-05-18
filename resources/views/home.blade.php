@@ -13,8 +13,8 @@
             <img class="h-14" src="/images/promachine_002.png" alt="ChitChat Logo">
         </div>
         <div>
-            <div class="text-xl font-medium text-black">Welcome to ProMachine</div>
-            <p class="text-gray-500">Take control of your suppliers and products workflow!</p>
+            <div class="text-xl font-medium text-black">Καλώς ήλθες στο ProMachine</div>
+            <p class="text-gray-500">Πάρε τον έλεγχο του workflow των προμηθευτών και των προϊόντων σου!</p>
         </div>
     </div>
 
