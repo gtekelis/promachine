@@ -4,6 +4,8 @@
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EanListController;
+use App\Http\Controllers\MpnListController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\RegisterController;
@@ -60,3 +62,7 @@ Route::post('/posts', [PostController::class, 'createPost'])->name('posts');
 Route::get('/skroutz', function(){
     return view('skroutz.index');
 });
+Route::get('/mpnList',[MpnListController::class, 'index'])->name('mpnList')->middleware('auth');
+Route::post('/mpnList',[MpnListController::class, 'insertMpnListToDb'])->name('mpnList')->middleware('auth');
+
+Route::get('eanList', [EanListController::class, 'index'])->name('eanList');
