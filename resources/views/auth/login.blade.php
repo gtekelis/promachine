@@ -14,7 +14,9 @@
 
                 <div class="mb-4">
                     <label for="email" class="sr-only">Email</label>
-                    <input type="text" name="email" id="email" placeholder="email" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror" value="{{ old('email') }}">
+                    <input type="text" name="email" id="email"
+                           placeholder="email" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror"
+                           value="{{ old('email') }}">
                     @error('email')
                     <div class="text-red-500 mt-2 text-sm">
                         {{$message}}
@@ -24,7 +26,10 @@
 
                 <div class="mb-4">
                     <label for="password" class="sr-only">Password</label>
-                    <input type="password " name="password" id="password" placeholder="password" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror" value="">
+                    <input type="password" name="password" id="password" placeholder="password"
+                           minlength="4" value=""
+                           class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror">
+
                     @error('password')
                     <div class="text-red-500 mt-2 text-sm">
                         {{$message}}
@@ -46,9 +51,5 @@
 
         </div>
     </div>
-
-
-
-
 
 @endsection
