@@ -1,5 +1,7 @@
 <?php
-
+if (App::environment('production')) {
+    URL::forceScheme('https');
+}
 
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\LogoutController;
