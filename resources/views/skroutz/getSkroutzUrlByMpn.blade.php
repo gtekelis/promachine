@@ -46,6 +46,9 @@
                             <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">Edit</span>
                             </th>
+                            <th scope="col" class="relative px-6 py-3">
+                                <span class="sr-only">Διαγραφή</span>
+                            </th>
                         </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -81,7 +84,26 @@
 {{--                                    Admin--}}
 {{--                                </td>--}}
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                    <form action="{{ route('mpnList', $mpn) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-blue-600 hover:text-blue-900">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <form action="{{ route('mpnList.delete', $mpn) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-500 hover:text-red-700">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -99,34 +121,4 @@
         {{ $mpn_list->links() }}
     </div>
 
-
-    {{--    @if($posts->count())--}}
-{{--        <div class="flex flex-row flex-wrap items-start">--}}
-{{--            @foreach($posts as $post)--}}
-{{--                <div class="mt-6 max-w-md mx-auto bg-white rounded-xl shadow-sm overflow-hidden md:max-w-2xl hover:shadow-lg">--}}
-{{--                    <div class="md:flex">--}}
-{{--                        <div class="md:flex-shrink-0">--}}
-{{--                            <img class="h-48 w-full object-cover md:w-48" src="https://picsum.photos/800" alt="Man looking at item at a store">--}}
-{{--                        </div>--}}
-{{--                        <div class="p-8">--}}
-{{--                            <div class="tracking-wide text-sm text-indigo-500 font-semibold">--}}
-{{--                                <span>{{$post->user->name}}</span> - <span>{{$post->created_at->diffForHumans()}}</span>--}}
-{{--                            </div>--}}
-{{--                            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Finding customers for your new business</a>--}}
-{{--                            <p class="mt-2 text-gray-500">--}}
-{{--                                {{$post->body}}--}}
-{{--                            </p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            @endforeach--}}
-
-{{--            @else--}}
-{{--                <p>No posts found</p>--}}
-{{--            @endif--}}
-{{--        </div>--}}
-
-{{--        <div class="flex flex-row justify-center mt-6 mb-3">--}}
-{{--            {{$posts->links()}}--}}
-{{--        </div>--}}
 @endsection

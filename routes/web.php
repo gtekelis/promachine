@@ -66,5 +66,6 @@ Route::get('/skroutz', function(){
 });
 Route::get('/mpnList',[MpnListController::class, 'index'])->name('mpnList')->middleware('auth');
 Route::post('/mpnList',[MpnListController::class, 'insertMpnListToDb'])->name('mpnList')->middleware('auth');
+Route::delete('/mpnList/{mpn}', [MpnListController::class, 'delete'])->name('mpnList.delete')->middleware('auth');
 
 Route::get('eanList', [EanListController::class, 'index'])->name('eanList');
