@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 class MpnListController extends Controller
 {
     public function index(){
-        return view('skroutz.getSkroutzUrlByMpn');
+        $mpn_list = MpnList::paginate(50);
+        return view('skroutz.getSkroutzUrlByMpn',[
+            'mpn_list' => $mpn_list
+        ]);
     }
 
     public function insertMpnListToDb(Request $request ){

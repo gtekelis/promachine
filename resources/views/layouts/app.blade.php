@@ -16,7 +16,7 @@
         <ul class="flex items-center">
             <li>
                 <a href="{{ route('dashboard') }}">
-                    <img class="h-14 mr-4" src="/images/promachine_002.png" alt="ChitChat Logo">
+                    <img class="h-20 mr-4" src="/images/promachine_002.png" alt="ProMachine Logo">
                 </a>
             </li>
             <li><a href="/home" class="p-3">Αρχική</a></li>
