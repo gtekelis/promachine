@@ -81,7 +81,12 @@
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {{ $mpn->skroutz_url }}
+                                    @if($mpn->skroutz_url)
+                                        <a href="$mpn->skroutz_url">Άνοιγμα</a>
+                                    @else
+                                        --
+                                    @endif
+
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <form action="{{ route('mpnList', $mpn) }}" method="post">
