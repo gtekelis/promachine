@@ -81,7 +81,7 @@
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    ---
+                                    {{ $mpn->skroutz_url }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <form action="{{ route('mpnList', $mpn) }}" method="post">
