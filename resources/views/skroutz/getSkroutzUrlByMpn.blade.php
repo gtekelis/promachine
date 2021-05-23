@@ -82,7 +82,7 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     @if($mpn->skroutz_url)
-                                        <a href="{{$mpn->skroutz_url}}" target="_blank">Άνοιγμα</a>
+                                        <a href="{{$mpn->skroutz_url}}" class="text-blue-500" target="_blank">Άνοιγμα</a>
                                     @else
                                         --
                                     @endif
