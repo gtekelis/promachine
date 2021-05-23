@@ -24,7 +24,7 @@ class MpnListController extends Controller
 
         for ($i = 0; $i < count($mpn_array); $i++){
             MpnList::create([
-                'mpn' => $mpn_array[$i]
+                'mpn' => trim($mpn_array[$i])
             ]);
         }
 
