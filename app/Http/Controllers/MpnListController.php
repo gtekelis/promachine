@@ -30,4 +30,10 @@ class MpnListController extends Controller
 
          return back();
     }
+
+    public function delete(MpnList $mpn){
+//        dd($mpn);
+        $mpn->delete();
+        return back();
+    }
 }
