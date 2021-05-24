@@ -21,7 +21,7 @@
             </li>
             <li><a href="/home" class="p-3">Αρχική</a></li>
             <li><a href="{{ route('dashboard') }}" class="p-3">Dashboard</a></li>
-            <li><a href="{{ route('posts') }}" class="p-3">Posts</a></li>
+{{--            <li><a href="{{ route('posts') }}" class="p-3">Posts</a></li>--}}
 
             <li>
                 <div class="">
