@@ -20,7 +20,10 @@
                 </a>
             </li>
             <li><a href="/home" class="p-3">Αρχική</a></li>
+
+            @if(auth()->user())
             <li><a href="{{ route('dashboard') }}" class="p-3">Dashboard</a></li>
+            @endif
 {{--            <li><a href="{{ route('posts') }}" class="p-3">Posts</a></li>--}}
 
             @if(auth()->user())
