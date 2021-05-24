@@ -76,15 +76,15 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                         @if($mpn->is_processed)
-                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-gray-800">
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-200 text-gray-800">
                                         @else
-                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-gray-800">
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-200 text-gray-800">
                                         @endif
 
                                         @if($mpn->is_processed)
-                                            Ναί
+                                            ΝΑΙ
                                         @else
-                                            Όχι
+                                            ΟΧΙ
                                         @endif
                                     </span>
                                 </td>
