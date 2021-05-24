@@ -75,9 +75,17 @@
                                     {{--<div class="text-sm text-gray-500">Optimization</div>--}}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-green-800">
-                                      Όχι
-                                        {{$mpn->is_processed}}
+                                        @if($mpn->is_processed)
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-gray-800">
+                                        @else
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-gray-800">
+                                        @endif
+
+                                        @if($mpn->is_processed)
+                                            Ναί
+                                        @else
+                                            Όχι
+                                        @endif
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
