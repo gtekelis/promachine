@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EanListController;
 use App\Http\Controllers\MpnListController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProductsToImportDataFromSkroutz;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\RegisterController;
 
@@ -69,3 +70,5 @@ Route::post('/mpnList',[MpnListController::class, 'insertMpnListToDb'])->name('m
 Route::delete('/mpnList/{mpn}', [MpnListController::class, 'delete'])->name('mpnList.delete')->middleware('auth');
 
 Route::get('eanList', [EanListController::class, 'index'])->name('eanList');
+
+Route::get('/productsToImportDataFromSkroutz', [ProductsToImportDataFromSkroutz::class, 'index'])->name('productsToImportDataFromSkroutz')->middleware('auth');

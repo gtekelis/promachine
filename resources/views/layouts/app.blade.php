@@ -38,7 +38,7 @@
                         <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
                             <li class=""><a href="{{route('mpnList')}}" class="rounded-t bg-gray-100 hover:bg-blue-100 py-2 px-4 block whitespace-no-wrap">Εύρεση URL με MPN</a></li>
                             <li class=""><a href="{{route('eanList')}}" class="bg-gray-100 hover:bg-blue-100 py-2 px-4 block whitespace-no-wrap">Εύρεση URL με EAN</a></li>
-{{--                            <li class=""><a href="#" class="rounded-b bg-gray-100 hover:bg-blue-100 py-2 px-4 block whitespace-no-wrap">Placeholder</a></li>--}}
+                            <li class=""><a href="{{ route('productsToImportDataFromSkroutz') }}" class="rounded-b bg-gray-100 hover:bg-blue-100 py-2 px-4 block whitespace-no-wrap">Προϊόντα για Import</a></li>
                         </ul>
                     </div>
 
