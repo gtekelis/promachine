@@ -65,10 +65,14 @@ Route::post('/posts', [PostController::class, 'createPost'])->name('posts');
 Route::get('/skroutz', function(){
     return view('skroutz.index');
 });
+//mpn
 Route::get('/mpnList',[MpnListController::class, 'index'])->name('mpnList')->middleware('auth');
 Route::post('/mpnList',[MpnListController::class, 'insertMpnListToDb'])->name('mpnList')->middleware('auth');
 Route::delete('/mpnList/{mpn}', [MpnListController::class, 'delete'])->name('mpnList.delete')->middleware('auth');
 
-Route::get('eanList', [EanListController::class, 'index'])->name('eanList');
+//ean
+Route::get('/eanList',[EanListController::class, 'index'])->name('eanList')->middleware('auth');
+Route::post('/eanList',[EanListController::class, 'insertEanListToDb'])->name('eanList')->middleware('auth');
+Route::delete('/eanList/{ean}', [EanListController::class, 'delete'])->name('eanList.delete')->middleware('auth');
 
 Route::get('/productsToImportDataFromSkroutz', [ProductsToImportDataFromSkroutz::class, 'index'])->name('productsToImportDataFromSkroutz')->middleware('auth');
