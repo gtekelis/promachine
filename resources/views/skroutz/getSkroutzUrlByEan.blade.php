@@ -37,16 +37,28 @@
                                 EAN
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Επιστρεφει 1 προϊον
+                                class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider bg-yellow-600">
+                                Επιστρεφει 1 προϊον (Skroutz)
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Εχει γινει επεξεργασια
+                                class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider bg-yellow-600">
+                                Εχει γινει επεξεργασια (Skroutz)
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider bg-yellow-600">
                                 Skroutz Url
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider bg-red-600">
+                                Επιστρεφει 1 προϊον (BestPrice)
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider bg-red-600">
+                                Εχει γινει επεξεργασια (BestPrice)
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider bg-red-600">
+                                BestPrice Url
                             </th>
                             <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">Edit</span>
@@ -75,7 +87,8 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <!-- START SKROUTZ FIELDS -->
+                                <td class="px-6 py-4 whitespace-nowrap bg-yellow-50">
                                     @if($ean->returns_one_product)
                                         <span
                                             class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-200 text-gray-800">
@@ -88,11 +101,8 @@
                                                     @else
                                                         ΟΧΙ
                                     @endif
-
-                                    {{--                                    <div class="text-sm text-gray-900">{{$ean->returns_one_product}}</div>--}}
-                                    {{--<div class="text-sm text-gray-500">Optimization</div>--}}
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="px-6 py-4 whitespace-nowrap bg-yellow-50">
                                     @if($ean->is_processed)
                                         <span
                                             class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-200 text-gray-800">
@@ -106,9 +116,9 @@
                                                     @else
                                                         ΟΧΙ
                                                     @endif
-                                    </span>
+
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 bg-yellow-50">
                                     @if($ean->skroutz_url)
                                         <a href="{{$ean->skroutz_url}}" class="text-blue-600 underline" target="_blank">Άνοιγμα</a>
                                     @else
@@ -116,6 +126,49 @@
                                     @endif
 
                                 </td>
+                                <!-- END SKROUTZ FIELDS -->
+
+                                <!-- START BESTPRICE FIELDS -->
+                                <td class="px-6 py-4 whitespace-nowrap bg-red-50">
+                                    @if($ean->returns_one_product)
+                                        <span
+                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-200 text-gray-800">
+                                        @else
+                                                <span
+                                                    class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-200 text-gray-800">
+                                        @endif
+                                                    @if($ean->returns_one_product)
+                                                        ΝΑΙ
+                                                    @else
+                                                        ΟΧΙ
+                                    @endif
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap bg-red-50">
+                                    @if($ean->is_processed)
+                                        <span
+                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-200 text-gray-800">
+                                        @else
+                                                <span
+                                                    class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-200 text-gray-800">
+                                        @endif
+
+                                                    @if($ean->is_processed)
+                                                        ΝΑΙ
+                                                    @else
+                                                        ΟΧΙ
+                                    @endif
+
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 bg-red-50">
+                                    @if($ean->skroutz_url)
+                                        <a href="{{$ean->skroutz_url}}" class="text-blue-600 underline" target="_blank">Άνοιγμα</a>
+                                    @else
+                                        --
+                                    @endif
+
+                                </td>
+                                <!-- END BESTPRICE FIELDS -->
+
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <form action="{{ route('eanList', $ean) }}" method="post">
                                         @csrf
