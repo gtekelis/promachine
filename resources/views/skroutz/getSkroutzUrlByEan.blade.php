@@ -130,21 +130,21 @@
 
                                 <!-- START BESTPRICE FIELDS -->
                                 <td class="px-6 py-4 whitespace-nowrap bg-red-50">
-                                    @if($ean->returns_one_product)
+                                    @if($ean->returns_one_product_best_price)
                                         <span
                                             class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-200 text-gray-800">
                                         @else
                                                 <span
                                                     class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-200 text-gray-800">
                                         @endif
-                                                    @if($ean->returns_one_product)
+                                                    @if($ean->returns_one_product_best_price)
                                                         ΝΑΙ
                                                     @else
                                                         ΟΧΙ
                                     @endif
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap bg-red-50">
-                                    @if($ean->is_processed)
+                                    @if($ean->is_processed_best_price)
                                         <span
                                             class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-200 text-gray-800">
                                         @else
@@ -152,7 +152,7 @@
                                                     class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-200 text-gray-800">
                                         @endif
 
-                                                    @if($ean->is_processed)
+                                                    @if($ean->is_processed_best_price)
                                                         ΝΑΙ
                                                     @else
                                                         ΟΧΙ
@@ -160,7 +160,7 @@
 
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 bg-red-50">
-                                    @if($ean->skroutz_url)
+                                    @if($ean->best_price_url)
                                         <a href="{{$ean->skroutz_url}}" class="text-blue-600 underline" target="_blank">Άνοιγμα</a>
                                     @else
                                         --
