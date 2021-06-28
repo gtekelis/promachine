@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Http;
 class ProductsToImportDataFromSkroutz extends Controller
 {
     public function index(){
-        $response = Http::get('http://139.162.185.28:5002/api/v1/inputProductsShow')->json();
+        $nodejs_api = env('NODEJS_API', false);
+        $response = Http::get($nodejs_api . '/inputProductsShow')->json();
 
         $collection = collect($response);
 
