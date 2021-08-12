@@ -44,6 +44,7 @@
 
                 </div>
             </li>
+            <li><a href="{{route('actionMpnList')}}" class="p-3">Action</a></li>
             @endif
         </ul>
 
