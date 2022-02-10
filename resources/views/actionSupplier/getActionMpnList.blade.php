@@ -37,7 +37,19 @@
                             </th>
                             <th scope="col"
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Trader Product ID
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Εχει γινει επεξεργασια
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Πληθος προϊοντων
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Υπαρχει στην Action
                             </th>
                             <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">Edit</span>
@@ -67,7 +79,23 @@
                                     </div>
                                 </td>
 
-                                <td class="px-6 py-4 whitespace-nowrap bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap bg-gray-50 text-center">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            {{--                                            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">--}}
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-blue-600 underline">
+                                               <a href="https://is3.action.pl/products?keyword={{$mpn->trader_product_id}}&IsExactSearch=False" target="_blank">{{$mpn->trader_product_id}}</a>
+                                            </div>
+                                            <div class="text-sm text-gray-500">
+                                                {{--jane.cooper@example.com--}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td class="px-6 py-4 whitespace-nowrap bg-gray-100 text-center">
                                     @if($mpn->is_processed)
                                         <span
                                             class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-200 text-gray-800">
@@ -82,6 +110,42 @@
                                                         ΟΧΙ
                                                     @endif
 
+                                </td>
+
+                                <td class="px-6 py-4 whitespace-nowrap bg-gray-50 text-center">
+                                    @if($mpn->is_processed)
+                                        <span
+                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-300 text-gray-600">
+                                        @else
+                                                <span
+                                                    class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-200 text-gray-800">
+                                        @endif
+
+                                                    @if($mpn->is_processed)
+                                                        @if($mpn->has_many_products)
+                                                            ΠΟΛΛΑ
+                                                        @else
+                                                            ΕΝΑ
+                                                    @endif
+                                    @endif
+                                </td>
+
+                                <td class="px-6 py-4 whitespace-nowrap bg-gray-100 text-center">
+                                    @if($mpn->does_product_exist)
+                                        <span
+                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-200 text-gray-800">
+                                        @else
+                                                <span
+                                                    class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-200 text-gray-800">
+                                        @endif
+
+                                                    @if($mpn->is_processed)
+                                                        @if($mpn->does_product_exist)
+                                                            ΝΑΙ
+                                                        @else
+                                                            ΟΧΙ
+                                                    @endif
+                                    @endif
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
